@@ -1,0 +1,26 @@
+<!--1，数据绑定-->
+<view>Hello,{{message}}</view>
+
+<!--2，列表展示-->
+<view wx:for="{{students}}">{{item.id}}:{{item.name}}</view>
+
+<!--3，事件监听-->
+<view>默认计数:{{counter}}</view>
+<button size="mini" bindtap="del">-</button>
+<button size="mini" bindtap="add">+</button>
+
+<!--第二种获取用户数据:
+  1,设置 open-type="getUserInfo" 固定值
+  2,bindgetuserinfo="handleGetUserInfo" 绑定我们的按钮事件
+  -->
+<button 
+size="mini" 
+open-type="getUserInfo" 
+bindgetuserinfo="handleGetUserInfo">
+获取授权</button>
+
+<!--第三种：展示用户信息(只能展示不能获取)-->
+<open-data type="userNickName"></open-data>
+<open-data type="userAvatarUrl"></open-data>
+
+<!--使用app中定义的全局对象-->
